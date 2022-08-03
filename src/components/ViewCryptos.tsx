@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export const ViewCryptos = () => {
     return (
         <ListCryptos>
-
             <ViewEachCryptos>
                 <ViewImageandText>
                     <ImageCrypto source={require('../assets/bitcoin.png')} />
@@ -20,7 +19,7 @@ export const ViewCryptos = () => {
                 <ViewPrices>
                     <Text style={{ textAlign: 'right' }}>$1000000</Text>
                     {/*! This icon DOESENT WORK!!   */}
-                    <Text style={{ textAlign: 'right' }}><Icon name="bitcoin" size={25} color="#ff0000" /> 1.82%</Text>
+                    <Text style={{ textAlign: 'right' }}><Icon name="line-chart" size={25} color="#ff0000" /> 1.82%</Text>
                 </ViewPrices>
             </ViewEachCryptos>
             <HorizontalView />

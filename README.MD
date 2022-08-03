@@ -25,6 +25,10 @@ React-Navigation: 6.0.0
 Styled-Components: ^5.3.5
 ```
 
+## ⚛️ AsyncStorage
+```
+AsyncStorage: ^1.17.7
+```
 
 ## ✉️ Contact
 
