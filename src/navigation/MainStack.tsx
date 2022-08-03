@@ -9,7 +9,7 @@ export const MainStack = () => {
   return (
     <>
       {/* Using navigation for navigate between screens */}
-      <NavigationContainer>
+      <NavigationContainer >
         <Stack.Navigator initialRouteName="CryptoTracker Pro">
           {/* Screen Home */}
           <Stack.Screen name="CryptoTracker Pro" component={Home} />
