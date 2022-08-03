@@ -9,12 +9,11 @@ export const Home = ({ navigation }: any) => {
       <ScrollView>
         {/* This shows the data added */}
         <ViewCryptos />
-        <ViewCryptos />
         {/* StyledView for added crypto */}
         <TouchableAddView>
         {/* Bottom to go to add a new crypto */}
         <TouchableAddButton onPress={() => navigation.navigate('AddCrypto')}>
-          <Text> Add a Cryptocurrency</Text>
+          <Text style={{fontSize:20,color:'#b9b9b9'}}> + Add a Cryptocurrency</Text>
         </TouchableAddButton>
         </TouchableAddView>
       </ScrollView>
@@ -25,6 +24,7 @@ export const Home = ({ navigation }: any) => {
 const TouchableAddButton = styled.TouchableHighlight`
   padding: 10px;
   margin: 10px;
+  margin-top: 20px;
 `
 
 const TouchableAddView = styled.View`

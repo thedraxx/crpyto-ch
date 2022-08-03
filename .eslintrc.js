@@ -7,12 +7,6 @@ module.exports = {
         "plugin:react/recommended",
         "airbnb"
     ],
-    'prettier/prettier': [
-        'error',
-        {
-          'endOfLine': 'auto',
-        }
-      ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -26,6 +20,5 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-    },
-    
+    }
 };
