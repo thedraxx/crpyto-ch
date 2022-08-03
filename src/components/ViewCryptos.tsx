@@ -1,30 +1,63 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useSelector } from 'react-redux'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+interface Props {
+    [x: string]: any;
+    name: string,
+    code: number,
+    src: string,
+    price: number,
+    change: number
+}
 
 export const ViewCryptos = () => {
+
+    // use UseState to store the cryptos in the state
+    const [cryptos, setCryptos] = useState<Props[]>([]);
+
+    // Read the data from the store
+    const { cripto } = useSelector((state: Props) => state.cripto);
+
+    // useEffect to save the data in the async storage  
+    useEffect(() => {
+        AsyncStorage.setItem('cripto', JSON.stringify(cripto));
+        AsyncStorage.getItem('cripto').then(value => setCryptos(JSON.parse(value)))
+    }, [cripto])
+
     return (
-        <ListCryptos>
-            <ViewEachCryptos>
-                <ViewImageandText>
-                    <ImageCrypto source={require('../assets/bitcoin.png')} />
-                    <ViewHorizontal >
-                        {/* Name of Crypto */}
-                        <Text>Bitcoin</Text>
-                        {/* code of crypto */}
-                        <Text>BTC</Text>
-                    </ViewHorizontal>
-                </ViewImageandText>
-                <ViewPrices>
-                    <Text style={{ textAlign: 'right' }}>$1000000</Text>
-                    {/*! This icon DOESENT WORK!!   */}
-                    <Text style={{ textAlign: 'right' }}><Icon name="line-chart" size={25} color="#ff0000" /> 1.82%</Text>
-                </ViewPrices>
-            </ViewEachCryptos>
-            <HorizontalView />
-        </ListCryptos>
-    );
+        //  If the data is not empty, render the data
+        (cryptos !== undefined || cryptos !== null) ? (
+            // using a .map function to render the data
+            cryptos.map((cry: any) => (
+                <View key={cry._id}>
+                    <ListCryptos>
+                        <ViewEachCryptos>
+                            <ViewImageandText>
+                                <ImageCrypto source={require('../assets/bitcoin.png')} />
+                                <ViewHorizontal >
+                                    {/* Name of Crypto */}
+                                    <Text>{cry.name}</Text>
+                                    {/* code of crypto */}
+                                    <Text>{cry.code}</Text>
+                                </ViewHorizontal>
+                            </ViewImageandText>
+                            <ViewPrices>
+                                <Text style={{ textAlign: 'right' }}>{cry.price}</Text>
+                                {/*! This icon DOESENT WORK!!   */}
+                                <Text style={{ textAlign: 'right' }}><Icon name="line-chart" size={25} color="#ff0000" />{cry.change}</Text>
+                            </ViewPrices>
+                        </ViewEachCryptos>
+                        <HorizontalView />
+                    </ListCryptos>
+                </View>
+            )))
+            :
+            // If the data is empty, render a message
+            (<Text>No Cryptos</Text>))
 };
 
 const ListCryptos = styled.View`
