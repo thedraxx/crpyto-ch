@@ -6,6 +6,7 @@ import { store } from './src/store/store';
 
 export const App = () => {
   return (
+    // SafeAreaView is used to make the app look better
     <SafeAreaView style={{ flex: 1 }}>
       {/* Provider for the store */}
       <Provider store={store}>

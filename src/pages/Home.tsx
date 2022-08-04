@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Text, ScrollView, View } from 'react-native';
 import { ViewCryptos } from '../components/ViewCryptos';
 import styled from 'styled-components/native';
 

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { useSelector } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components/native';
 
 interface Props {
     [x: string]: any;
@@ -14,10 +14,10 @@ interface Props {
     change: number
 }
 
-export const ViewCryptos = () => {
+export const ViewCryptos = (): JSX.Element | JSX.Element[] => {
 
     // use UseState to store the cryptos in the state
-    const [cryptos, setCryptos]: (any) = useState<Props[] | []>([]);
+    const [cryptos, setCryptos] = useState<Props[] | []>([]);
 
     // Read the data from the store
     const { cripto } = useSelector((state: Props) => state.cripto);
@@ -27,7 +27,8 @@ export const ViewCryptos = () => {
         // Set the data in the storage
         AsyncStorage.setItem('cripto', JSON.stringify(cripto));
         // Get the data from the storage and send to cryptos
-        AsyncStorage.getItem('cripto').then(value => setCryptos(JSON.parse(value)))
+        AsyncStorage.getItem('cripto')
+            .then((value) => (value ? setCryptos(JSON.parse(value)) : null))
     }, [cripto])
 
     return (
@@ -39,6 +40,7 @@ export const ViewCryptos = () => {
                     <ListCryptos>
                         <ViewEachCryptos>
                             <ViewImageandText>
+                                {/* !!! This image need to be replace for cry.src  */}
                                 <ImageCrypto source={require('../assets/bitcoin.png')} />
                                 <ViewHorizontal >
                                     {/* Name of Crypto */}
@@ -50,7 +52,7 @@ export const ViewCryptos = () => {
                             <ViewPrices>
                                 <Text style={{ textAlign: 'right', color: 'black' }}>{cry.price}</Text>
                                 {/*! This icon DOESENT WORK!!   */}
-                                <Text style={{ textAlign: 'right', color: 'black' }}><Icon name="line-chart" size={25} color="#ff0000" />{cry.change}</Text>
+                                <Text style={{ textAlign: 'right', color: 'green' }}><AntDesign name="areachart" size={20} color='green' />{cry.change}</Text>
                             </ViewPrices>
                         </ViewEachCryptos>
                         <HorizontalView />
@@ -62,6 +64,7 @@ export const ViewCryptos = () => {
             (<Text>No Cryptos</Text>))
 };
 
+// Styled-Components
 const ListCryptos = styled.View`
   display: flex;
   flex:1;

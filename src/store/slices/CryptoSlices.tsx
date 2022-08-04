@@ -4,7 +4,8 @@ export const CryptoSlice = createSlice({
     // initialState is the default state of the application, in this case for example its hardcoded 
     name: 'cryptos',
     initialState: {
-        cripto: [{  _id: new Date().getTime(),
+        cripto: [{
+            _id: new Date().getTime(),
             name: 'Bitcoin',
             code: 'BTC',
             src: '../assets/bitcoin.png',
@@ -12,8 +13,8 @@ export const CryptoSlice = createSlice({
             change: 1.82
         }]
     },
-      //    reducer is the function that will be called when the action is dispatched
+    //    reducer is the function that will be called when the action is dispatched
     reducers: {}
 });
 // export the reducers
-export const {} = CryptoSlice.actions;
+export const { } = CryptoSlice.actions;
