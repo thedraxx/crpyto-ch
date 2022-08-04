@@ -17,14 +17,16 @@ interface Props {
 export const ViewCryptos = () => {
 
     // use UseState to store the cryptos in the state
-    const [cryptos, setCryptos] = useState<Props[]>([]);
+    const [cryptos, setCryptos]: (any) = useState<Props[] | []>([]);
 
     // Read the data from the store
     const { cripto } = useSelector((state: Props) => state.cripto);
 
     // useEffect to save the data in the async storage  
     useEffect(() => {
+        // Set the data in the storage
         AsyncStorage.setItem('cripto', JSON.stringify(cripto));
+        // Get the data from the storage and send to cryptos
         AsyncStorage.getItem('cripto').then(value => setCryptos(JSON.parse(value)))
     }, [cripto])
 
@@ -40,15 +42,15 @@ export const ViewCryptos = () => {
                                 <ImageCrypto source={require('../assets/bitcoin.png')} />
                                 <ViewHorizontal >
                                     {/* Name of Crypto */}
-                                    <Text>{cry.name}</Text>
+                                    <Text style={{ color: 'black' }}>{cry.name}</Text>
                                     {/* code of crypto */}
-                                    <Text>{cry.code}</Text>
+                                    <Text style={{ color: 'black' }}>{cry.code}</Text>
                                 </ViewHorizontal>
                             </ViewImageandText>
                             <ViewPrices>
-                                <Text style={{ textAlign: 'right' }}>{cry.price}</Text>
+                                <Text style={{ textAlign: 'right', color: 'black' }}>{cry.price}</Text>
                                 {/*! This icon DOESENT WORK!!   */}
-                                <Text style={{ textAlign: 'right' }}><Icon name="line-chart" size={25} color="#ff0000" />{cry.change}</Text>
+                                <Text style={{ textAlign: 'right', color: 'black' }}><Icon name="line-chart" size={25} color="#ff0000" />{cry.change}</Text>
                             </ViewPrices>
                         </ViewEachCryptos>
                         <HorizontalView />

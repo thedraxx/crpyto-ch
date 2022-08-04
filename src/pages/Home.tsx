@@ -1,23 +1,25 @@
 import React from 'react';
-import { Text, View, TouchableHighlight, ScrollView } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import { ViewCryptos } from '../components/ViewCryptos';
 import styled from 'styled-components/native';
 
 export const Home = ({ navigation }: any) => {
   return (
-    <ViewHome> 
-      <ScrollView>
-        {/* This shows the data added */}
-        <ViewCryptos />
-        {/* StyledView for added crypto */}
-        <TouchableAddView>
-        {/* Bottom to go to add a new crypto */}
-        <TouchableAddButton onPress={() => navigation.navigate('AddCrypto')}>
-          <Text style={{fontSize:20,color:'#b9b9b9'}}> + Add a Cryptocurrency</Text>
-        </TouchableAddButton>
-        </TouchableAddView>
-      </ScrollView>
-    </ViewHome>
+    <>
+      <ViewHome>
+        <ScrollView>
+          {/* This shows the data added */}
+          <ViewCryptos />
+          {/* StyledView for added crypto */}
+          <TouchableAddView>
+            {/* Bottom to go to add a new crypto */}
+            <TouchableAddButton onPress={() => navigation.navigate('AddCrypto')}>
+              <Text style={{ fontSize: 20, color: '#b9b9b9' }}> + Add a Cryptocurrency</Text>
+            </TouchableAddButton>
+          </TouchableAddView>
+        </ScrollView>
+      </ViewHome>
+    </>
   );
 };
 

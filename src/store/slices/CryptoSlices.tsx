@@ -15,7 +15,5 @@ export const CryptoSlice = createSlice({
       //    reducer is the function that will be called when the action is dispatched
     reducers: {}
 });
-
-
 // export the reducers
 export const {} = CryptoSlice.actions;
