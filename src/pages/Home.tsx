@@ -3,7 +3,7 @@ import { Text, ScrollView, View } from 'react-native';
 import { ViewCryptos } from '../components/ViewCryptos';
 import styled from 'styled-components/native';
 
-export const Home = ({ navigation }: any) => {
+export const Home = ({ navigation }: any):JSX.Element => {
   return (
     <>
       <ViewHome>

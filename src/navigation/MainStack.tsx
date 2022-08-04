@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home} from '../pages/Home';
 import {AddCrypto} from '../pages/AddCrypto';
 
-export const MainStack = () => {
+export const MainStack = ():JSX.Element => {
   const Stack = createNativeStackNavigator();
   return (
     <>

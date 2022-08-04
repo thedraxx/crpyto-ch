@@ -7,6 +7,7 @@ import styled from 'styled-components/native';
 
 interface Props {
     [x: string]: any;
+    _id: number;
     name: string,
     code: number,
     src: string,
@@ -35,7 +36,7 @@ export const ViewCryptos = (): JSX.Element | JSX.Element[] => {
         //  If the data is not empty, render the data
         (cryptos !== undefined || cryptos !== null) ? (
             // using a .map function to render the data
-            cryptos.map((cry: any) => (
+            cryptos.map((cry:Props): JSX.Element => (
                 <View key={cry._id}>
                     <ListCryptos>
                         <ViewEachCryptos>
