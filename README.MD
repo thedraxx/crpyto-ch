@@ -25,6 +25,16 @@ React-Navigation: 6.0.0
 Styled-Components: ^5.3.5
 ```
 
+## ⚛️ React-Redux
+```
+React-Redux: "^8.0.2"
+```
+
+## ⚛️ Redux-Toolkit
+```
+reduxjs/toolkit: "^1.8.3",
+```
+
 ## ⚛️ AsyncStorage
 ```
 AsyncStorage: ^1.17.7

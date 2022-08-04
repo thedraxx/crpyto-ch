@@ -15,7 +15,7 @@ interface Props {
     change: number
 }
 
-export const ViewCryptos = (): JSX.Element | JSX.Element[] => {
+export const ViewCryptos = (): any => {
 
     // use UseState to store the cryptos in the state
     const [cryptos, setCryptos] = useState<Props[] | []>([]);
