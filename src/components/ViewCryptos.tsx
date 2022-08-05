@@ -23,6 +23,8 @@ function ViewCryptos() {
       .then(value => (value ? setCryptos(JSON.parse(value)) : null));
   }, [cripto]);
 
+  console.log(cryptos);
+
   return (
     <>
       {
@@ -36,7 +38,7 @@ function ViewCryptos() {
                   <ViewEachCryptos>
                     <ViewImageandText>
                       {/* !!! This image need to be replace for cry.src  */}
-                      <ImageCrypto source={require('../assets/bitcoin.png')} />
+                      <ImageCrypto source={{uri: `${cry.src}`}} />
                       <ViewHorizontal>
                         {/* Name of Crypto */}
                         <Text>{cry.name}</Text>
@@ -46,11 +48,19 @@ function ViewCryptos() {
                     </ViewImageandText>
                     <ViewPrices>
                       <TextPrice>{cry.price}</TextPrice>
-                      {/*! This icon DOESENT WORK!!   */}
-                      <TextChange>
-                        <AntDesign name="areachart" size={20} color="green" />
-                        {cry.change}
-                      </TextChange>
+
+                      {/* If the change is positive, render the icon up, else render the icon down */}
+                      {cry.change > 0 ? (
+                        <TextChange>
+                          <AntDesign name="areachart" size={20} color="green" />
+                          {cry.change}
+                        </TextChange>
+                      ) : (
+                        <TextChange>
+                          <AntDesign name="areachart" size={20} color="red" />
+                          {cry.change}
+                        </TextChange>
+                      )}
                     </ViewPrices>
                   </ViewEachCryptos>
                   <HorizontalView />
