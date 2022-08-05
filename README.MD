@@ -7,6 +7,8 @@
 
 <br> This repository consist in a Crypto Challenge made in React Native .</br>
 
+## HomeScreen
+![Home_screen](/photos/home.jpg){width=50%}
 
 <br> The app is made with the following technologies:</br>
 
@@ -39,7 +41,6 @@ reduxjs/toolkit: "^1.8.3",
 ```
 AsyncStorage: ^1.17.7
 ```
-
 ## ✉️ Contact
 
 gmail: cerrano.francisco22@gmail.com
