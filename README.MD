@@ -8,7 +8,8 @@
 <br> This repository consist in a Crypto Challenge made in React Native .</br>
 
 ## HomeScreen
-![Home_screen](/photos/home.jpg)
+![Screenshot_1](https://user-images.githubusercontent.com/55867157/183303499-88094c73-5b60-40d6-8d6b-bef7cacf0ac7.png)
+
 
 <br> The app is made with the following technologies:</br>
 
