@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {Colorwhite, ColorGray} from '../utils/colors';
 
 export const TouchableAddButton = styled.TouchableHighlight`
   padding: 10px;
@@ -18,10 +19,10 @@ export const ViewHome = styled.View`
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: white;
+  background-color: ${Colorwhite};
 `;
 
 export const TextButton = styled.Text`
   font-size: 20px;
-  color: '#b9b9b9';
+  color: ${ColorGray};
 `;

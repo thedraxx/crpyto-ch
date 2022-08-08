@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {ColorBlack, ColorLightGray} from '../utils/colors';
 
 // Styled-Components
 export const ListCryptos = styled.View`
@@ -45,22 +46,22 @@ export const ImageCrypto = styled.Image`
 export const HorizontalView = styled.View`
   border-bottom-width: 1px;
   margin-top: 25px;
-  border-bottom-color: #d7d7d7;
+  border-bottom-color: ${ColorLightGray};
 `;
 
 export const TextPrice = styled.Text`
   text-align: right;
-  color: 'black';
+  color: ${ColorBlack};
 `;
 
 export const TextChange = styled.Text`
   text-align: right;
-  color: 'green';
+  color: ${ColorBlack};
 `;
 
 export const TextNoCryptos = styled.Text`
   top: 15px;
   text-align: center;
-  color: 'black';
+  color: ${ColorBlack};
   font-size: 20px;
 `;
