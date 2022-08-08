@@ -46,16 +46,16 @@ function ViewCryptos(): JSX.Element {
                     </ViewHorizontal>
                   </ViewImageandText>
                   <ViewPrices>
-                    <TextPrice>{crypto.price}</TextPrice>
+                    <TextPrice> $ {crypto.price}</TextPrice>
                     {crypto.change > 0 ? (
-                      <TextChange>
+                      <TextChange positive>
                         <AntDesign name="areachart" size={20} color="green" />
-                        {crypto.change}
+                        {crypto.change}%
                       </TextChange>
                     ) : (
                       <TextChange>
                         <AntDesign name="areachart" size={20} color="red" />
-                        {crypto.change}
+                        {crypto.change}%
                       </TextChange>
                     )}
                   </ViewPrices>

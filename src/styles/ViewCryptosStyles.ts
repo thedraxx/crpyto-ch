@@ -56,7 +56,7 @@ export const TextPrice = styled.Text`
 
 export const TextChange = styled.Text`
   text-align: right;
-  color: ${ColorBlack};
+  color: ${(props: {positive: boolean}) => (props.positive ? 'green' : 'red')};
 `;
 
 export const TextNoCryptos = styled.Text`
