@@ -17,18 +17,18 @@ import {
   ViewPrices,
 } from '../styles/ViewCryptosStyles';
 
-function ViewCryptos(): JSX.Element {
-  const [cryptos, setCryptos] = useState<Props[] | []>([]);
-  const {cripto} = useSelector((state: Props) => state.cripto);
+const ViewCryptos = (): JSX.Element => {
+  const [cryptos, setCryptos] = useState<Props[]>([]);
+  const {cryptoStore} = useSelector((state: Props) => state.cripto);
 
   useEffect(() => {
     // Set the data in the storage
-    AsyncStorage.setItem('cripto', JSON.stringify(cripto));
+    AsyncStorage.setItem('cripto', JSON.stringify(cryptoStore));
     // Get the data from the storage and send to cryptos
     AsyncStorage.getItem('cripto').then(value =>
       value ? setCryptos(JSON.parse(value)) : null,
     );
-  }, [cripto]);
+  }, [cryptoStore]);
 
   return (
     <>
@@ -70,5 +70,5 @@ function ViewCryptos(): JSX.Element {
       )}
     </>
   );
-}
+};
 export default ViewCryptos;

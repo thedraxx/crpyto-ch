@@ -4,28 +4,20 @@ import {NavigationContainer} from '@react-navigation/native';
 import AddCrypto from '../pages/AddCrypto';
 import Home from '../pages/Home';
 import React from 'react';
-import {CustomImage} from '../styles/MainStackStyles';
+import TitleHome from '../components/TitleHome';
 
 function MainStack(): JSX.Element {
   const Stack = createNativeStackNavigator();
   return (
     <>
       <NavigationContainer>
-        <CustomImage source={require('../photos/stock.jpg')} />
         <Stack.Navigator initialRouteName="CryptoTracker Pro">
           <Stack.Screen
             name="CryptoTracker Pro"
             component={Home}
             options={{
-              title: 'CryptoTracker Pro',
-              headerStyle: {
-                backgroundColor: `${ColorBlue}`,
-              },
-              headerTintColor: `${Colorwhite}`,
-              headerTitleStyle: {
-                fontWeight: 'bold',
-                fontSize: 25,
-              },
+              headerStyle: {backgroundColor: ColorBlue},
+              headerTitle: props => <TitleHome {...props} />,
             }}
           />
           <Stack.Screen
