@@ -1,42 +1,42 @@
+import {ColorBlack, ColorBlue, Colorwhite} from '../utils/colors';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import AddCrypto from '../pages/AddCrypto';
 import Home from '../pages/Home';
 import React from 'react';
+import {CustomImage} from '../styles/MainStackStyles';
 
 function MainStack(): JSX.Element {
   const Stack = createNativeStackNavigator();
   return (
     <>
-      {/* Using navigation for navigate between screens */}
       <NavigationContainer>
+        <CustomImage source={require('../photos/stock.jpg')} />
         <Stack.Navigator initialRouteName="CryptoTracker Pro">
-          {/* Screen Home */}
           <Stack.Screen
             name="CryptoTracker Pro"
             component={Home}
             options={{
               title: 'CryptoTracker Pro',
               headerStyle: {
-                backgroundColor: '#ffffff',
+                backgroundColor: `${ColorBlue}`,
               },
-              headerTintColor: '#000000',
+              headerTintColor: `${Colorwhite}`,
               headerTitleStyle: {
                 fontWeight: 'bold',
-                fontSize: 20,
+                fontSize: 25,
               },
             }}
           />
-          {/* Screen NewTask */}
           <Stack.Screen
             name="AddCrypto"
             component={AddCrypto}
             options={{
               title: 'Back Home',
               headerStyle: {
-                backgroundColor: '#ffffff',
+                backgroundColor: `${Colorwhite}`,
               },
-              headerTintColor: '#000000',
+              headerTintColor: `${ColorBlack}`,
               headerTitleStyle: {
                 fontWeight: 'bold',
                 fontSize: 20,

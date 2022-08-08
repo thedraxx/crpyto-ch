@@ -25,9 +25,9 @@ function ViewCryptos(): JSX.Element {
     // Set the data in the storage
     AsyncStorage.setItem('cripto', JSON.stringify(cripto));
     // Get the data from the storage and send to cryptos
-    AsyncStorage.getItem('cripto')
-      // If value is not null, set the value in the state, else set an empty array
-      .then(value => (value ? setCryptos(JSON.parse(value)) : null));
+    AsyncStorage.getItem('cripto').then(value =>
+      value ? setCryptos(JSON.parse(value)) : null,
+    );
   }, [cripto]);
 
   return (
