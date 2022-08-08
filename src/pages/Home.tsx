@@ -11,6 +11,7 @@ import {
 function Home({navigation}: any): JSX.Element {
   return (
     <ViewHome>
+      {/* ScrollView for scroll the cryptos */}
       <ScrollView>
         {/* This shows the data added */}
         <ViewCryptos />
