@@ -5,10 +5,10 @@ import {
   ViewTitleStack,
 } from '../styles/TitleHomeStyles';
 
-const TitleHome = () => (
+const TitleHome = (): JSX.Element => (
   <ViewTitleStack>
     <CustomImage source={require('../photos/stock.jpg')} />
-    <TitleScreen>CryptoCurrencies</TitleScreen>
+    <TitleScreen>CryptoTracker Pro</TitleScreen>
   </ViewTitleStack>
 );
 

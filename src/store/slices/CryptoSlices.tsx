@@ -15,7 +15,7 @@ export const CryptoSlice = createSlice({
         change: 1.82,
       },
       {
-        _id: new Date().getTime(),
+        _id: Math.random(),
         name: 'Etherium',
         code: 'ETH',
         src: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png',
