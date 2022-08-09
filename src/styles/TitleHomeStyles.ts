@@ -8,7 +8,7 @@ export const ViewTitleStack = styled.View`
   display: flex;
   flex-direction: column;
   margin: auto;
-  bottom: 30;
+  bottom: 30px;
   justify-content: space-between;
 `;
 

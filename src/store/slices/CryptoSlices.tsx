@@ -7,7 +7,7 @@ export const CryptoSlice = createSlice({
     // it is the state of the application when the app is started
     cripto: [
       {
-        _id: Math.random(),
+        id: Math.random(),
         name: 'Bitcoin',
         code: 'BTC',
         src: 'https://www.pngall.com/wp-content/uploads/1/Bitcoin-Free-PNG-Image.png',
@@ -15,7 +15,7 @@ export const CryptoSlice = createSlice({
         change: 1.82,
       },
       {
-        _id: Math.random(),
+        id: Math.random(),
         name: 'Etherium',
         code: 'ETH',
         src: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png',
@@ -23,7 +23,7 @@ export const CryptoSlice = createSlice({
         change: 1.46,
       },
       {
-        _id: Math.random(),
+        id: Math.random(),
         name: 'XRP',
         code: 'XRP',
         src: 'https://cryptologos.cc/logos/xrp-xrp-logo.png?v=023',

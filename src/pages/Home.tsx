@@ -12,16 +12,14 @@ import ModalView from '../components/ModalView';
 function Home({navigation}: any): JSX.Element {
   return (
     <ViewHome>
-      <ScrollView>
-        {/* Modal appears when an error occours */}
-        <ModalView />
-        <ViewCryptos />
-        <TouchableAddView>
-          <TouchableAddButton onPress={() => navigation.navigate('AddCrypto')}>
-            <TextButton> + Add a Cryptocurrency</TextButton>
-          </TouchableAddButton>
-        </TouchableAddView>
-      </ScrollView>
+      {/* Modal appears when an error occours */}
+      {/* <ModalView /> */}
+      <ViewCryptos />
+      <TouchableAddView>
+        <TouchableAddButton onPress={() => navigation.navigate('AddCrypto')}>
+          <TextButton> + Add a Cryptocurrency</TextButton>
+        </TouchableAddButton>
+      </TouchableAddView>
     </ViewHome>
   );
 }

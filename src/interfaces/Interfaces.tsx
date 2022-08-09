@@ -1,6 +1,6 @@
 export interface Props {
   [x: string]: any;
-  _id: number;
+  id: number;
   name: string;
   code: number;
   src: string;
