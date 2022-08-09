@@ -1,14 +1,15 @@
 import styled from 'styled-components/native';
 import {Colorwhite, ColorGray, ColorLightBlue} from '../utils/colors';
 
-export const CustomModalView = styled.View`
+export const ModalViewCustom = styled.View`
   display: flex;
   flex: 1;
   margin-top: 22px;
   margin: auto;
+  position: absolute;
 `;
 
-export const CenteredViewModal = styled.View`
+export const ModalContain = styled.View`
   flex: 1;
   justify-content: center;
   margin-top: 22px;
@@ -34,13 +35,13 @@ export const ModalTextError = styled(ModalText)`
   font-weight: bold;
 `;
 
-export const PressableButton = styled.Pressable`
+export const ButtonPressable = styled.Pressable`
   border-radius: 10px;
   padding: 10px;
   background-color: ${Colorwhite};
 `;
 
-export const TextStyleButtom = styled.Text`
+export const ButtomStyle = styled.Text`
   color: ${Colorwhite};
   font-weight: bold;
   text-align: center;

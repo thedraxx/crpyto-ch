@@ -12,7 +12,7 @@ export const ViewTitleStack = styled.View`
   justify-content: space-between;
 `;
 
-export const CustomImage = styled.Image`
+export const ImageCustom = styled.Image`
   width: 60px;
   height: 60px;
   border-radius: 50px;
@@ -21,7 +21,7 @@ export const CustomImage = styled.Image`
   left: 80%;
 `;
 
-export const TitleScreen = styled.Text`
+export const TitleApp = styled.Text`
   font-size: 30px;
   color: white;
   font-weight: bold;

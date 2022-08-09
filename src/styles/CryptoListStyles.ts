@@ -1,13 +1,14 @@
 import styled from 'styled-components/native';
-import {ColorBlack, ColorLightGray} from '../utils/colors';
+import {ColorBlack, ColorGray, ColorLightGray} from '../utils/colors';
 
 // Styled-Components
 export const ListCryptos = styled.View`
   display: flex;
   flex: 1;
+  flex-grow: 1;
   flex-direction: column;
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
 `;
 
 export const ViewEachCryptos = styled.View`
@@ -60,8 +61,16 @@ export const TextChange = styled.Text`
 `;
 
 export const TextNoCryptos = styled.Text`
-  top: 15px;
+  display: flex;
+  margin-top: 35px;
   text-align: center;
-  color: ${ColorBlack};
+  justify-content: center;
+  color: ${ColorGray};
   font-size: 20px;
+`;
+
+export const FlatListCustom = styled.FlatList`
+  flex: 1;
+  flex-grow: 1;
+  width: 100%;
 `;

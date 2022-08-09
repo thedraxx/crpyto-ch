@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {Alert, Modal} from 'react-native';
 import {
-  CustomModalView,
-  CenteredViewModal,
+  ModalViewCustom,
+  ModalContain,
   ModalViewContain,
   ModalTextError,
   ModalText,
-  PressableButton,
-  TextStyleButtom,
+  ButtonPressable,
+  ButtomStyle,
 } from '../styles/ModalViewStyles';
 
 const ModalView = () => {
@@ -16,7 +16,7 @@ const ModalView = () => {
   const HandleViewModal = () => setModalVisible(!modalVisible);
 
   return (
-    <CustomModalView>
+    <ModalViewCustom>
       <Modal
         animationType="slide"
         transparent={true}
@@ -25,19 +25,19 @@ const ModalView = () => {
           Alert.alert('Modal has been closed.');
           setModalVisible(!modalVisible);
         }}>
-        <CenteredViewModal>
+        <ModalContain>
           <ModalViewContain>
             <ModalTextError>Error</ModalTextError>
             <ModalText>
               Please wait a few minutes before you try again
             </ModalText>
-            <PressableButton onPress={HandleViewModal}>
-              <TextStyleButtom>Dismiss</TextStyleButtom>
-            </PressableButton>
+            <ButtonPressable onPress={HandleViewModal}>
+              <ButtomStyle>Dismiss</ButtomStyle>
+            </ButtonPressable>
           </ModalViewContain>
-        </CenteredViewModal>
+        </ModalContain>
       </Modal>
-    </CustomModalView>
+    </ModalViewCustom>
   );
 };
 

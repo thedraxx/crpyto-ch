@@ -2,7 +2,7 @@ import {Props} from '../interfaces/Interfaces';
 import {useSelector} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useEffect, useState} from 'react';
-import {FlatLista} from './FlatLista';
+import CryptoList from './CryptoList';
 
 const ViewCryptos = (): JSX.Element => {
   const [cryptos, setCryptos] = useState<Props[]>([]);
@@ -19,7 +19,7 @@ const ViewCryptos = (): JSX.Element => {
 
   return (
     <>
-      <FlatLista cryptos={cryptos} />
+      <CryptoList cryptos={cryptos} />
     </>
   );
 };

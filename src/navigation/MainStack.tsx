@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import AddCrypto from '../pages/AddCrypto';
 import Home from '../pages/Home';
-import TitleHome from '../components/TitleHome';
+import NavHome from '../components/NavHome';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ const MainStack = (): JSX.Element => (
           component={Home}
           options={{
             headerStyle: {backgroundColor: ColorBlue},
-            headerTitle: props => <TitleHome {...props} />,
+            headerTitle: props => <NavHome {...props} />,
           }}
         />
         <Stack.Screen
