@@ -38,6 +38,6 @@ export const ImageCustom = styled.Image`
 
 export const TitleApp = styled.Text`
   font-size: 30px;
-  color: white;
+  color: ${Colorwhite};
   font-weight: bold;
 `;
