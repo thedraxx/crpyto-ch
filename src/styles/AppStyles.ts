@@ -4,5 +4,5 @@ import {ColorBlue} from '../utils/colors';
 export const SafeAreaViewCustom = styled.SafeAreaView`
   flex: 1;
   background-color: ${ColorBlue};
-  padding-top: 20px;
+  padding-top: 25px;
 `;

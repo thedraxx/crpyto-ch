@@ -1,18 +1,18 @@
 import styled from 'styled-components/native';
-import {Colorwhite, ColorGray} from '../utils/colors';
+import {Colorwhite, ColorGray, ColorBlue} from '../utils/colors';
 
 export const AddButton = styled.TouchableHighlight`
+  position: relative;
+  bottom: 0;
   padding: 10px;
   margin: 10px;
-  margin-top: 20px;
 `;
 
 export const AddView = styled.View`
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  padding: 10px;
-  top: 0;
+  align-items: center;
+
+  background-color: ${Colorwhite};
 `;
 
 export const ViewHome = styled.View`
@@ -23,6 +23,6 @@ export const ViewHome = styled.View`
 `;
 
 export const ButtonText = styled.Text`
-  font-size: 20px;
-  color: ${ColorGray};
+  font-size: 15px;
+  color: ${ColorBlue};
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {Props} from '../interfaces/Interfaces';
 import NoCryptos from './NoCryptos';
 import {
@@ -14,44 +14,51 @@ import {
   ViewImageandText,
   ViewPrices,
   FlatListCustom,
+  TextName,
+  TextCode,
 } from '../styles/CryptoListStyles';
+import ButonAddCrypto from './ButonAddCrypto';
 
-const CryptoList = ({cryptos}: Props): JSX.Element => (
-  <FlatListCustom
-    data={cryptos}
-    keyExtractor={(item: {id: number}) => item.id}
-    ListEmptyComponent={cryptos.length > 0 ? null : <NoCryptos />}
-    renderItem={({item}: any): JSX.Element => (
-      <ListCryptos>
+const CryptoList = ({cryptos, navigation}): JSX.Element => (
+  console.log(navigation),
+  (
+    <FlatListCustom
+      data={cryptos}
+      keyExtractor={(item: {id: number}) => item.id}
+      ListEmptyComponent={<NoCryptos />}
+      ListFooterComponent={<ButonAddCrypto navigation={navigation} />}
+      renderItem={({item}: any): JSX.Element => (
         <ListCryptos>
-          <ViewEachCryptos>
-            <ViewImageandText>
-              <ImageCrypto source={{uri: `${item.src}`}} />
-              <ViewHorizontal>
-                <Text>{item.name}</Text>
-                <Text>{item.code}</Text>
-              </ViewHorizontal>
-            </ViewImageandText>
-            <ViewPrices>
-              <TextPrice> $ {item.price}</TextPrice>
-              {item.change > 0 ? (
-                <TextChange positive>
-                  <AntDesign name="areachart" size={20} color="green" />
-                  {item.change}%
-                </TextChange>
-              ) : (
-                <TextChange>
-                  <AntDesign name="areachart" size={20} color="red" />
-                  {item.change}%
-                </TextChange>
-              )}
-            </ViewPrices>
-          </ViewEachCryptos>
-          <HorizontalView />
+          <ListCryptos>
+            <ViewEachCryptos>
+              <ViewImageandText>
+                <ImageCrypto source={{uri: `${item.src}`}} />
+                <ViewHorizontal>
+                  <TextName>{item.name}</TextName>
+                  <TextCode>{item.code}</TextCode>
+                </ViewHorizontal>
+              </ViewImageandText>
+              <ViewPrices>
+                <TextPrice> $ {item.price}</TextPrice>
+                {item.change > 0 ? (
+                  <TextChange positive>
+                    <MaterialIcons name="north-east" size={15} color="green" />
+                    {item.change}%
+                  </TextChange>
+                ) : (
+                  <TextChange>
+                    <MaterialIcons name="south-west" size={15} color="red" />
+                    {item.change}%
+                  </TextChange>
+                )}
+              </ViewPrices>
+            </ViewEachCryptos>
+            <HorizontalView />
+          </ListCryptos>
         </ListCryptos>
-      </ListCryptos>
-    )}
-  />
+      )}
+    />
+  )
 );
 
 export default CryptoList;

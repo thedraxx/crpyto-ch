@@ -1,19 +1,13 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import ViewCryptos from '../components/ViewCryptos';
-import {ButtonText, AddButton, AddView, ViewHome} from '../styles/HomeStyles';
-import ModalView from '../components/ModalView';
+import {ViewHome} from '../styles/HomeStyles';
+// import ModalView from '../components/ModalView';
 
-function Home({navigation}: any): JSX.Element {
-  return (
-    <ViewHome>
-      {/* <ModalView /> */}
-      <ViewCryptos />
-      <AddView>
-        <AddButton onPress={() => navigation.navigate('AddCrypto')}>
-          <ButtonText> + Add a Cryptocurrency</ButtonText>
-        </AddButton>
-      </AddView>
-    </ViewHome>
-  );
-}
+const Home = ({navigation}: any): JSX.Element => (
+  <ViewHome>
+    {/* <ModalView /> */}
+    <ViewCryptos navigation={navigation} />
+  </ViewHome>
+);
 export default Home;

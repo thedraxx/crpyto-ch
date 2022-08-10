@@ -27,16 +27,18 @@ export const ViewTitleStack = styled.View`
 `;
 
 export const ImageCustom = styled.Image`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50px;
   display: flex;
-  top: 45px;
-  left: 80%;
+  top: 35px;
+  left: 75%;
 `;
 
 export const TitleApp = styled.Text`
-  font-size: 30px;
+  font-size: 24px;
   color: ${Colorwhite};
   font-weight: bold;
+  left: 5px;
+  top: -10px;
 `;

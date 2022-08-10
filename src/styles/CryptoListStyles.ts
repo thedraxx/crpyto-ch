@@ -7,8 +7,9 @@ export const ListCryptos = styled.View`
   flex: 1;
   flex-grow: 1;
   flex-direction: column;
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
+  top: 13px;
 `;
 
 export const ViewEachCryptos = styled.View`
@@ -40,8 +41,8 @@ export const ViewPrices = styled.View`
 `;
 
 export const ImageCrypto = styled.Image`
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
 `;
 
 export const HorizontalView = styled.View`
@@ -53,6 +54,8 @@ export const HorizontalView = styled.View`
 export const TextPrice = styled.Text`
   text-align: right;
   color: ${ColorBlack};
+  font-weight: bold;
+  font-size: 19px;
 `;
 
 export const TextChange = styled.Text`
@@ -73,4 +76,15 @@ export const FlatListCustom = styled.FlatList`
   flex: 1;
   flex-grow: 1;
   width: 100%;
+`;
+
+export const TextName = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  color: ${ColorBlack};
+`;
+
+export const TextCode = styled.Text`
+  font-size: 15px;
+  bottom: 2px;
 `;

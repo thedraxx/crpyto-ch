@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 
 const NavHomes = (): JSX.Element => (
   <ViewTitleStack>
-    <ImageCustom source={require('../photos/stock.jpg')} />
+    <ImageCustom source={require('../assets/girl.png')} />
     <TitleApp>CryptoTracker Pro</TitleApp>
   </ViewTitleStack>
 );
@@ -32,6 +32,7 @@ const MainStack = (): JSX.Element => (
           headerTitle: () => <NavHomes />,
         }}
       />
+
       <Stack.Screen
         name="AddCrypto"
         component={AddCrypto}
