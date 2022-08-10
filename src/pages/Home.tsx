@@ -7,7 +7,7 @@ function Home({navigation}: any): JSX.Element {
   return (
     <ViewHome>
       {/* Modal appears when an error occours */}
-      <ModalView />
+      {/* <ModalView /> */}
       <ViewCryptos />
       <AddView>
         <AddButton onPress={() => navigation.navigate('AddCrypto')}>

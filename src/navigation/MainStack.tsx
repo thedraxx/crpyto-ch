@@ -1,12 +1,23 @@
 import React from 'react';
-import {ColorBlack, ColorBlue, Colorwhite} from '../utils/colors';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import AddCrypto from '../pages/AddCrypto';
 import Home from '../pages/Home';
-import NavHome from '../components/NavHome';
+import {
+  ImageCustom,
+  TitleApp,
+  ViewTitleStack,
+  styles,
+} from '../styles/MainStackStyle';
 
 const Stack = createNativeStackNavigator();
+
+const NavHomes = (): JSX.Element => (
+  <ViewTitleStack>
+    <ImageCustom source={require('../photos/stock.jpg')} />
+    <TitleApp>CryptoTracker Pro</TitleApp>
+  </ViewTitleStack>
+);
 
 const MainStack = (): JSX.Element => (
   <>
@@ -16,8 +27,10 @@ const MainStack = (): JSX.Element => (
           name="CryptoTracker Pro"
           component={Home}
           options={{
-            headerStyle: {backgroundColor: ColorBlue},
-            headerTitle: props => <NavHome {...props} />,
+            headerStyle: {
+              backgroundColor: styles.headerStyleHome.backgroundColor,
+            },
+            headerTitle: () => <NavHomes />,
           }}
         />
         <Stack.Screen
@@ -26,12 +39,12 @@ const MainStack = (): JSX.Element => (
           options={{
             title: 'Back Home',
             headerStyle: {
-              backgroundColor: `${Colorwhite}`,
+              backgroundColor: styles.headerStyleAdd.backgroundColor,
             },
-            headerTintColor: `${ColorBlack}`,
+            headerTintColor: styles.headerStyleAdd.tintColor,
             headerTitleStyle: {
-              fontWeight: 'bold',
-              fontSize: 20,
+              fontWeight: styles.headerStyleAdd.fontWeight,
+              fontSize: styles.headerStyleAdd.titleFontSize,
             },
           }}
         />

@@ -1,42 +1,43 @@
 import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
+import {ColorBlack, ColorBlue, Colorwhite} from '../utils/colors';
 
-export const Mainstack = StyleSheet.create({
-  header: {
-    backgroundColor: '#1e90ff',
+export const styles = StyleSheet.create({
+  headerStyleHome: {
+    backgroundColor: `${ColorBlue}`,
   },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
-    color: 'white',
+  headerStyleAdd: {
+    backgroundColor: `${Colorwhite}`,
+    tintColor: `${ColorBlack}`,
     fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+    titleFontSize: 20,
   },
 });
+
+// StyledComponents
+
+export const ViewTitleStack = styled.View`
+  background-color: ${ColorBlue};
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  bottom: 30px;
+  justify-content: space-between;
+`;
+
+export const ImageCustom = styled.Image`
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  top: 45px;
+  left: 80%;
+`;
+
+export const TitleApp = styled.Text`
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+`;

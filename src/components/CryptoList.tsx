@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Props} from '../interfaces/Interfaces';
 import {
@@ -39,15 +39,13 @@ const CryptoList = ({cryptos}: Props) => {
     <>
       <FlatListCustom
         data={cryptos}
-        keyExtractor={item => item.id}
+        keyExtractor={(item: {id: number}) => item.id}
         ListEmptyComponent={isSometing ? null : NoCryptos}
-        renderItem={({item}) => (
+        renderItem={({item}: any): JSX.Element => (
           <ListCryptos>
             <ListCryptos>
               <ViewEachCryptos>
                 <ViewImageandText>
-                  {console.log('hay algo')}
-
                   <ImageCrypto source={{uri: `${item.src}`}} />
                   <ViewHorizontal>
                     <Text>{item.name}</Text>
