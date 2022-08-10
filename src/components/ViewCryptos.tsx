@@ -17,10 +17,6 @@ const ViewCryptos = (): JSX.Element => {
     );
   }, [crypto]);
 
-  return (
-    <>
-      <CryptoList cryptos={cryptos} />
-    </>
-  );
+  return <CryptoList cryptos={cryptos} />;
 };
 export default ViewCryptos;
