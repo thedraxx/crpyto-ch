@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Text} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Props} from '../interfaces/Interfaces';
@@ -17,21 +17,11 @@ import {
 } from '../styles/CryptoListStyles';
 
 const CryptoList = ({cryptos}: Props): JSX.Element => {
-  const [isEmptyCryptos, setIsEmptyCryptos] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (cryptos.length > 0) {
-      setIsEmptyCryptos(true);
-    } else {
-      setIsEmptyCryptos(false);
-    }
-  }, [cryptos]);
-
   return (
     <FlatListCustom
       data={cryptos}
       keyExtractor={(item: {id: number}) => item.id}
-      ListEmptyComponent={isEmptyCryptos ? null : <NoCryptos />}
+      ListEmptyComponent={cryptos.length > 0 ? null : <NoCryptos />}
       renderItem={({item}: any): JSX.Element => (
         <ListCryptos>
           <ListCryptos>

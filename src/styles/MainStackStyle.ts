@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
 });
 
 // StyledComponents
-
 export const ViewTitleStack = styled.View`
   background-color: ${ColorBlue};
   flex: 1;
