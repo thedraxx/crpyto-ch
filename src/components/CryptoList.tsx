@@ -16,14 +16,14 @@ import {
   FlatListCustom,
 } from '../styles/CryptoListStyles';
 
-function CryptoList({cryptos}: Props): JSX.Element {
-  const [isSometing, setIsSometing] = useState<boolean>(false);
+const CryptoList = ({cryptos}: Props): JSX.Element => {
+  const [isEmptyCryptos, setIsEmptyCryptos] = useState<boolean>(false);
 
   useEffect(() => {
     if (cryptos.length > 0) {
-      setIsSometing(true);
+      setIsEmptyCryptos(true);
     } else {
-      setIsSometing(false);
+      setIsEmptyCryptos(false);
     }
   }, [cryptos]);
 
@@ -31,7 +31,7 @@ function CryptoList({cryptos}: Props): JSX.Element {
     <FlatListCustom
       data={cryptos}
       keyExtractor={(item: {id: number}) => item.id}
-      ListEmptyComponent={isSometing ? null : <NoCryptos />}
+      ListEmptyComponent={isEmptyCryptos ? null : <NoCryptos />}
       renderItem={({item}: any): JSX.Element => (
         <ListCryptos>
           <ListCryptos>
@@ -64,6 +64,6 @@ function CryptoList({cryptos}: Props): JSX.Element {
       )}
     />
   );
-}
+};
 
 export default CryptoList;
