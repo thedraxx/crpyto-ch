@@ -3,7 +3,6 @@ import {createSlice} from '@reduxjs/toolkit';
 export const CryptoSlice = createSlice({
   name: 'cryptos',
   initialState: {
-    // it is the state of the application when the app is started
     crypto: [
       {
         id: Math.random(),

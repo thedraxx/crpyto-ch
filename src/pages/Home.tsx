@@ -6,7 +6,6 @@ import ModalView from '../components/ModalView';
 function Home({navigation}: any): JSX.Element {
   return (
     <ViewHome>
-      {/* Modal appears when an error occours */}
       {/* <ModalView /> */}
       <ViewCryptos />
       <AddView>
