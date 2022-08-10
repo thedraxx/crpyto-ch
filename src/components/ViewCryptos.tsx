@@ -9,9 +9,7 @@ const ViewCryptos = (): JSX.Element => {
   const {crypto} = useSelector((state: Props) => state.crypto);
 
   useEffect(() => {
-    // Set the data in the storage
     AsyncStorage.setItem('cripto', JSON.stringify(crypto));
-    // Get the data from the storage and send to cryptos
     AsyncStorage.getItem('cripto').then(value =>
       value ? setCryptos(JSON.parse(value)) : null,
     );
