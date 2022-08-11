@@ -8,23 +8,23 @@ import {
   ModalText,
   ButtonPressable,
   ButtomStyle,
-} from '../styles/ModalViewStyles';
+} from './styles';
 
 const ModalView = () => {
-  const [modalVisible, setModalVisible] = useState(true);
-
-  const HandleViewModal = () => setModalVisible(!modalVisible);
+  const [handleViewModal, setHandleViewModal] = useState<boolean>(true);
+  const HandleViewModal = () => setHandleViewModal(prev => !prev);
+  const requestClose = Alert => {
+    Alert.alert('Modal has been closed.');
+    setHandleViewModal(false);
+  };
 
   return (
     <ModalViewCustom>
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
+        visible={handleViewModal}
+        onRequestClose={() => requestClose(Alert)}>
         <ModalContain>
           <ModalViewContain>
             <ModalTextError>Error</ModalTextError>

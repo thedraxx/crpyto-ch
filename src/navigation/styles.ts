@@ -1,22 +1,22 @@
 import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
-import {ColorBlack, ColorBlue, Colorwhite} from '../utils/colors';
+import {colors} from '../utils/colors';
 
 export const styles = StyleSheet.create({
   headerStyleHome: {
-    backgroundColor: `${ColorBlue}`,
+    backgroundColor: `${colors.blue}`,
   },
-  headerStyleAdd: {
-    backgroundColor: `${Colorwhite}`,
-    tintColor: `${ColorBlack}`,
-    fontWeight: 'bold',
-    titleFontSize: 20,
+  headerStyle: {
+    backgroundColor: `${colors.white}`,
+  },
+  headerTitle: {
+    color: `${colors.white}`,
   },
 });
 
 // StyledComponents
 export const ViewTitleStack = styled.View`
-  background-color: ${ColorBlue};
+  background-color: ${colors.blue};
   flex: 1;
   width: 100%;
   display: flex;
@@ -27,16 +27,18 @@ export const ViewTitleStack = styled.View`
 `;
 
 export const ImageCustom = styled.Image`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50px;
   display: flex;
-  top: 45px;
-  left: 80%;
+  top: 32px;
+  left: 75%;
 `;
 
 export const TitleApp = styled.Text`
-  font-size: 30px;
-  color: ${Colorwhite};
+  font-size: 21px;
+  color: ${colors.white};
   font-weight: bold;
+  left: 5px;
+  top: -10px;
 `;

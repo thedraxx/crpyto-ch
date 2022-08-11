@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
-import {ColorBlue} from '../utils/colors';
+import {colors} from './src/utils/colors';
 
 export const SafeAreaViewCustom = styled.SafeAreaView`
   flex: 1;
-  background-color: ${ColorBlue};
-  padding-top: 20px;
+  background-color: ${colors.blue};
+  padding-top: 25px;
 `;

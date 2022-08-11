@@ -1,47 +1,58 @@
 import React from 'react';
-import {Text} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import {Props} from '../interfaces/Interfaces';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {colors} from '../../utils/colors';
+import ButonAddCrypto from '../buttons/ButonAddCrypto';
 import NoCryptos from './NoCryptos';
 import {
+  FlatListCustom,
   HorizontalView,
   ImageCrypto,
   ListCryptos,
   TextChange,
+  TextCode,
+  TextName,
   TextPrice,
   ViewEachCryptos,
   ViewHorizontal,
   ViewImageandText,
   ViewPrices,
-  FlatListCustom,
-} from '../styles/CryptoListStyles';
+} from './styles';
 
-const CryptoList = ({cryptos}: Props): JSX.Element => (
+const CryptoList = ({cryptos, navigation}): JSX.Element => (
   <FlatListCustom
     data={cryptos}
-    keyExtractor={(item: {id: number}) => item.id}
-    ListEmptyComponent={cryptos.length > 0 ? null : <NoCryptos />}
+    keyExtractor={({id}: number) => id}
+    ListEmptyComponent={<NoCryptos />}
+    ListFooterComponent={<ButonAddCrypto navigation={navigation} />}
     renderItem={({item}: any): JSX.Element => (
       <ListCryptos>
         <ListCryptos>
           <ViewEachCryptos>
             <ViewImageandText>
-              <ImageCrypto source={{uri: `${item.src}`}} />
+              <ImageCrypto source={{uri: item.src}} />
               <ViewHorizontal>
-                <Text>{item.name}</Text>
-                <Text>{item.code}</Text>
+                <TextName>{item.name}</TextName>
+                <TextCode>{item.code}</TextCode>
               </ViewHorizontal>
             </ViewImageandText>
             <ViewPrices>
               <TextPrice> $ {item.price}</TextPrice>
               {item.change > 0 ? (
                 <TextChange positive>
-                  <AntDesign name="areachart" size={20} color="green" />
+                  <MaterialIcons
+                    name="north-east"
+                    size={15}
+                    color={`${colors.green}`}
+                  />
                   {item.change}%
                 </TextChange>
               ) : (
                 <TextChange>
-                  <AntDesign name="areachart" size={20} color="red" />
+                  <MaterialIcons
+                    name="south-west"
+                    size={15}
+                    color={`${colors.red}`}
+                  />
                   {item.change}%
                 </TextChange>
               )}
