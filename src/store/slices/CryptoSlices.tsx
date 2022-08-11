@@ -29,12 +29,7 @@ export const CryptoSlice = createSlice({
         change: -2.47,
       },
     ],
-    navegacion: false,
   },
-  reducers: {
-    changeNavigation: state => {
-      state.navegacion = !state.navegacion;
-    },
-  },
+  reducers: {},
 });
 export const {} = CryptoSlice.actions;

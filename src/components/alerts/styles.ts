@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {Colorwhite, ColorGray, ColorLightBlue} from '../utils/colors';
+import {colors} from '../../utils/colors';
 
 export const ModalViewCustom = styled.View`
   display: flex;
@@ -19,10 +19,10 @@ export const ModalContain = styled.View`
 
 export const ModalViewContain = styled.View`
   margin: 20px;
-  background-color: ${Colorwhite};
+  background-color: ${colors.white};
   border-radius: 20px;
   padding: 35px;
-  border: 1px solid ${ColorGray};
+  border: 1px solid ${colors.gray};
   align-items: center;
 `;
 
@@ -38,13 +38,13 @@ export const ModalTextError = styled(ModalText)`
 export const ButtonPressable = styled.Pressable`
   border-radius: 10px;
   padding: 10px;
-  background-color: ${Colorwhite};
+  background-color: ${colors.white};
 `;
 
 export const ButtomStyle = styled.Text`
-  color: ${Colorwhite};
+  color: ${colors.white};
   font-weight: bold;
   text-align: center;
-  color: ${ColorLightBlue};
+  color: ${colors.lightBlue};
   font-size: 15px;
 `;

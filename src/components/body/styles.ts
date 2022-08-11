@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {ColorBlack, ColorGray, ColorLightGray} from '../utils/colors';
+import {colors} from '../../utils/colors';
 
 // Styled-Components
 export const ListCryptos = styled.View`
@@ -48,12 +48,12 @@ export const ImageCrypto = styled.Image`
 export const HorizontalView = styled.View`
   border-bottom-width: 1px;
   margin-top: 25px;
-  border-bottom-color: ${ColorLightGray};
+  border-bottom-color: ${colors.lightGray};
 `;
 
 export const TextPrice = styled.Text`
   text-align: right;
-  color: ${ColorBlack};
+  color: ${colors.black};
   font-weight: bold;
   font-size: 19px;
 `;
@@ -68,7 +68,7 @@ export const TextNoCryptos = styled.Text`
   margin-top: 35px;
   text-align: center;
   justify-content: center;
-  color: ${ColorGray};
+  color: ${colors.gray};
   font-size: 20px;
 `;
 
@@ -81,7 +81,7 @@ export const FlatListCustom = styled.FlatList`
 export const TextName = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: ${ColorBlack};
+  color: ${colors.black};
 `;
 
 export const TextCode = styled.Text`

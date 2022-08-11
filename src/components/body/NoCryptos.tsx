@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListCryptos, TextNoCryptos} from '../styles/CryptoListStyles';
+import {ListCryptos, TextNoCryptos} from './styles';
 
 const NoCryptos = (): JSX.Element => (
   <ListCryptos>
